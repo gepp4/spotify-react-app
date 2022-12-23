@@ -1,2 +1,3 @@
 # Dependencies
 - Nodemon 
+- Concurrently
