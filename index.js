@@ -27,7 +27,7 @@ const generateRandomString = length => {
 const stateKey = 'spotify_auth_state';
 
 /* Login to Spotify */
-router.get('/login', (req,res) => {
+app.get('/login', (req,res) => {
   const state = generateRandomString(16);
   res.cookie(stateKey, state);
 
@@ -45,7 +45,7 @@ router.get('/login', (req,res) => {
 });
 
 /* Obtain Token */
-router.get('/callback', (req, res) => {
+app.get('/callback', (req, res) => {
   const code = req.query.code || null;
 
   axios({
@@ -82,7 +82,7 @@ router.get('/callback', (req, res) => {
 });
 
 /* Refresh Token */
-router.get('/refresh_token', (req, res) => {
+app.get('/refresh_token', (req, res) => {
 
   const { refresh_token } = req.query;
 
@@ -106,7 +106,7 @@ router.get('/refresh_token', (req, res) => {
       });
 });
 
-
 app.listen(port, () => {
-  console.log("Hello World")
-})
+  console.log("express app liseting!");
+});
+
