@@ -3,11 +3,12 @@ import fonts from './fonts';
 import variables from './variables';
 
 const GlobalStyle = createGlobalStyle`
-  ${fonts};
+// TODO REPLACE FONTS
+  //${fonts};
   ${variables};
 
   html {
-    box-sizing: border-box;
+    box-sizing: border-box;z
   }
 
   *,

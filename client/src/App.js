@@ -9,8 +9,7 @@ import {
 } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { GlobalStyle } from './styles';
-import Home from "./components/Home"
-import { Login, Profile } from './pages';
+import { Login, Profile, TopArtists, TopTracks } from './pages';
 
 const StyledLogoutButton = styled.button`
   position: absolute;
@@ -58,8 +57,8 @@ function App() {
               <Router>
                 <ScrollToTop />
                 <Routes>
-                  <Route path="/top-artists"/>
-                  <Route path="/top-tracks"/>
+                  <Route path="/top-artists" element={<TopArtists />} />
+                  <Route path="/top-tracks" element={<TopTracks />} />
                   <Route path="/playlists/:id/" />
                   <Route path="/playlists" />
                   <Route exact path="/" element={<Profile />} />
